@@ -1,0 +1,7 @@
+camera .....real time stereo streaming stitching and calculate homography each 30 frame
+
+J_T.....real time stereo streaming stitching and calculate homography in file and use it once 
+
+cv-Agx-5g real time streaming using vpi and cuda in jetson thor .....still in prograss
+
+normal-camera ..... streaming without stitching
