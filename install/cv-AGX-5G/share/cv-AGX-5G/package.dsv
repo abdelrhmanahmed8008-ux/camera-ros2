@@ -1,0 +1,9 @@
+source;share/cv-AGX-5G/hook/pythonpath.ps1
+source;share/cv-AGX-5G/hook/pythonpath.dsv
+source;share/cv-AGX-5G/hook/pythonpath.sh
+source;share/cv-AGX-5G/hook/ament_prefix_path.ps1
+source;share/cv-AGX-5G/hook/ament_prefix_path.dsv
+source;share/cv-AGX-5G/hook/ament_prefix_path.sh
+source;../../build/cv-AGX-5G/share/cv-AGX-5G/hook/pythonpath_develop.ps1
+source;../../build/cv-AGX-5G/share/cv-AGX-5G/hook/pythonpath_develop.dsv
+source;../../build/cv-AGX-5G/share/cv-AGX-5G/hook/pythonpath_develop.sh

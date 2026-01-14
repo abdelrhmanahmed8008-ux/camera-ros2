@@ -1,0 +1,53 @@
+[0.749s] Invoking command in '/home/gb/camera/build/normal_camera': PYTHONPATH=/home/gb/camera/build/normal_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/normal_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/gb/camera/build/normal_camera/build
+[0.915s] running develop
+[1.040s] Removing /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal-camera.egg-link (link to .)
+[1.070s] Invoked command in '/home/gb/camera/build/normal_camera' returned '0': PYTHONPATH=/home/gb/camera/build/normal_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/normal_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/gb/camera/build/normal_camera/build
+[1.071s] Invoking command in '/home/gb/camera/src/normal_camera': PYTHONPATH=/home/gb/camera/build/normal_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/normal_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/normal_camera build --build-base /home/gb/camera/build/normal_camera/build install --record /home/gb/camera/build/normal_camera/install.log --single-version-externally-managed install_data --force
+[1.225s] running egg_info
+[1.225s] writing ../../build/normal_camera/normal_camera.egg-info/PKG-INFO
+[1.225s] writing dependency_links to ../../build/normal_camera/normal_camera.egg-info/dependency_links.txt
+[1.225s] writing entry points to ../../build/normal_camera/normal_camera.egg-info/entry_points.txt
+[1.225s] writing requirements to ../../build/normal_camera/normal_camera.egg-info/requires.txt
+[1.225s] writing top-level names to ../../build/normal_camera/normal_camera.egg-info/top_level.txt
+[1.226s] reading manifest file '../../build/normal_camera/normal_camera.egg-info/SOURCES.txt'
+[1.227s] writing manifest file '../../build/normal_camera/normal_camera.egg-info/SOURCES.txt'
+[1.227s] running build
+[1.227s] running build_py
+[1.227s] creating /home/gb/camera/build/normal_camera/build
+[1.227s] creating /home/gb/camera/build/normal_camera/build/lib
+[1.227s] creating /home/gb/camera/build/normal_camera/build/lib/normal_camera
+[1.227s] copying normal_camera/grid_viewer.py -> /home/gb/camera/build/normal_camera/build/lib/normal_camera
+[1.227s] copying normal_camera/camera_4_publisher.py -> /home/gb/camera/build/normal_camera/build/lib/normal_camera
+[1.227s] copying normal_camera/camera_2_publisher.py -> /home/gb/camera/build/normal_camera/build/lib/normal_camera
+[1.227s] copying normal_camera/camera_0_publisher.py -> /home/gb/camera/build/normal_camera/build/lib/normal_camera
+[1.228s] copying normal_camera/__init__.py -> /home/gb/camera/build/normal_camera/build/lib/normal_camera
+[1.228s] copying normal_camera/camera_6_publisher.py -> /home/gb/camera/build/normal_camera/build/lib/normal_camera
+[1.228s] running install
+[1.228s] running install_lib
+[1.228s] creating /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera
+[1.228s] copying /home/gb/camera/build/normal_camera/build/lib/normal_camera/grid_viewer.py -> /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera
+[1.228s] copying /home/gb/camera/build/normal_camera/build/lib/normal_camera/camera_4_publisher.py -> /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera
+[1.228s] copying /home/gb/camera/build/normal_camera/build/lib/normal_camera/camera_2_publisher.py -> /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera
+[1.228s] copying /home/gb/camera/build/normal_camera/build/lib/normal_camera/camera_0_publisher.py -> /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera
+[1.229s] copying /home/gb/camera/build/normal_camera/build/lib/normal_camera/__init__.py -> /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera
+[1.229s] copying /home/gb/camera/build/normal_camera/build/lib/normal_camera/camera_6_publisher.py -> /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera
+[1.229s] byte-compiling /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera/grid_viewer.py to grid_viewer.cpython-310.pyc
+[1.230s] byte-compiling /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera/camera_4_publisher.py to camera_4_publisher.cpython-310.pyc
+[1.230s] byte-compiling /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera/camera_2_publisher.py to camera_2_publisher.cpython-310.pyc
+[1.230s] byte-compiling /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera/camera_0_publisher.py to camera_0_publisher.cpython-310.pyc
+[1.231s] byte-compiling /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera/__init__.py to __init__.cpython-310.pyc
+[1.231s] byte-compiling /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera/camera_6_publisher.py to camera_6_publisher.cpython-310.pyc
+[1.232s] running install_data
+[1.232s] copying resource/normal_camera -> /home/gb/camera/install/normal_camera/share/ament_index/resource_index/packages
+[1.232s] copying package.xml -> /home/gb/camera/install/normal_camera/share/normal_camera
+[1.232s] copying launch/grid_2x2_launch.py -> /home/gb/camera/install/normal_camera/share/normal_camera/launch
+[1.232s] running install_egg_info
+[1.232s] Copying ../../build/normal_camera/normal_camera.egg-info to /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal_camera-0.1.0-py3.10.egg-info
+[1.233s] running install_scripts
+[1.246s] Installing camera_0_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.246s] Installing camera_2_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.246s] Installing camera_4_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.246s] Installing camera_6_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.246s] Installing grid_viewer script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.246s] writing list of installed files to '/home/gb/camera/build/normal_camera/install.log'
+[1.266s] Invoked command in '/home/gb/camera/src/normal_camera' returned '0': PYTHONPATH=/home/gb/camera/build/normal_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/normal_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/normal_camera build --build-base /home/gb/camera/build/normal_camera/build install --record /home/gb/camera/build/normal_camera/install.log --single-version-externally-managed install_data --force

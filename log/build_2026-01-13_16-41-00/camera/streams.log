@@ -1,0 +1,21 @@
+[0.757s] Invoking command in '/home/gb/camera/build/camera': PYTHONPATH=/home/gb/camera/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/gb/camera/build/camera/build --no-deps symlink_data
+[0.928s] running develop
+[1.050s] running egg_info
+[1.050s] writing camera.egg-info/PKG-INFO
+[1.050s] writing dependency_links to camera.egg-info/dependency_links.txt
+[1.050s] writing entry points to camera.egg-info/entry_points.txt
+[1.050s] writing requirements to camera.egg-info/requires.txt
+[1.050s] writing top-level names to camera.egg-info/top_level.txt
+[1.052s] reading manifest file 'camera.egg-info/SOURCES.txt'
+[1.052s] writing manifest file 'camera.egg-info/SOURCES.txt'
+[1.053s] running build_ext
+[1.053s] Creating /home/gb/camera/install/camera/lib/python3.10/site-packages/camera.egg-link (link to .)
+[1.054s] Installing combined_view script to /home/gb/camera/install/camera/lib/camera
+[1.054s] Installing stereo_stitch_0 script to /home/gb/camera/install/camera/lib/camera
+[1.054s] Installing stereo_stitch_2 script to /home/gb/camera/install/camera/lib/camera
+[1.054s] Installing stereo_stitch_4 script to /home/gb/camera/install/camera/lib/camera
+[1.054s] Installing stereo_stitch_6 script to /home/gb/camera/install/camera/lib/camera
+[1.054s] 
+[1.054s] Installed /home/gb/camera/build/camera
+[1.054s] running symlink_data
+[1.088s] Invoked command in '/home/gb/camera/build/camera' returned '0': PYTHONPATH=/home/gb/camera/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/gb/camera/build/camera/build --no-deps symlink_data

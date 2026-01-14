@@ -1,0 +1,20 @@
+running develop
+running egg_info
+writing J_T.egg-info/PKG-INFO
+writing dependency_links to J_T.egg-info/dependency_links.txt
+writing entry points to J_T.egg-info/entry_points.txt
+writing requirements to J_T.egg-info/requires.txt
+writing top-level names to J_T.egg-info/top_level.txt
+reading manifest file 'J_T.egg-info/SOURCES.txt'
+writing manifest file 'J_T.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/gb/camera/install/J_T/lib/python3.10/site-packages/J-T.egg-link (link to .)
+Installing calibrate script to /home/gb/camera/install/J_T/lib/J_T
+Installing combined_view script to /home/gb/camera/install/J_T/lib/J_T
+Installing stereo_stitch_node script to /home/gb/camera/install/J_T/lib/J_T
+
+Installed /home/gb/camera/build/J_T
+running symlink_data
+symbolically linking /home/gb/camera/build/J_T/resource/J_T -> /home/gb/camera/install/J_T/share/ament_index/resource_index/packages
+symbolically linking /home/gb/camera/build/J_T/package.xml -> /home/gb/camera/install/J_T/share/J_T
+symbolically linking /home/gb/camera/build/J_T/launch/launch_optimized.py -> /home/gb/camera/install/J_T/share/J_T/launch

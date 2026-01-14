@@ -1,0 +1,21 @@
+[0.758s] Invoking command in '/home/gb/camera/build/normal_camera': PYTHONPATH=/home/gb/camera/build/normal_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/normal_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/gb/camera/build/normal_camera/build --no-deps symlink_data
+[0.931s] running develop
+[1.054s] running egg_info
+[1.054s] writing normal_camera.egg-info/PKG-INFO
+[1.054s] writing dependency_links to normal_camera.egg-info/dependency_links.txt
+[1.054s] writing entry points to normal_camera.egg-info/entry_points.txt
+[1.054s] writing requirements to normal_camera.egg-info/requires.txt
+[1.054s] writing top-level names to normal_camera.egg-info/top_level.txt
+[1.056s] reading manifest file 'normal_camera.egg-info/SOURCES.txt'
+[1.056s] writing manifest file 'normal_camera.egg-info/SOURCES.txt'
+[1.058s] running build_ext
+[1.058s] Creating /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal-camera.egg-link (link to .)
+[1.059s] Installing camera_0_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.059s] Installing camera_2_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.059s] Installing camera_4_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.059s] Installing camera_6_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.059s] Installing grid_viewer script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.059s] 
+[1.059s] Installed /home/gb/camera/build/normal_camera
+[1.059s] running symlink_data
+[1.093s] Invoked command in '/home/gb/camera/build/normal_camera' returned '0': PYTHONPATH=/home/gb/camera/build/normal_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/normal_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/gb/camera/build/normal_camera/build --no-deps symlink_data

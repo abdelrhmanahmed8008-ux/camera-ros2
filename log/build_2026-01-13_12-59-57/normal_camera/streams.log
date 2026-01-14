@@ -1,0 +1,24 @@
+[0.760s] Invoking command in '/home/gb/camera/build/normal_camera': PYTHONPATH=/home/gb/camera/build/normal_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/normal_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/gb/camera/build/normal_camera/build --no-deps symlink_data --force
+[0.930s] running develop
+[1.050s] running egg_info
+[1.050s] writing normal_camera.egg-info/PKG-INFO
+[1.051s] writing dependency_links to normal_camera.egg-info/dependency_links.txt
+[1.051s] writing entry points to normal_camera.egg-info/entry_points.txt
+[1.051s] writing requirements to normal_camera.egg-info/requires.txt
+[1.051s] writing top-level names to normal_camera.egg-info/top_level.txt
+[1.052s] reading manifest file 'normal_camera.egg-info/SOURCES.txt'
+[1.052s] writing manifest file 'normal_camera.egg-info/SOURCES.txt'
+[1.053s] running build_ext
+[1.053s] Creating /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal-camera.egg-link (link to .)
+[1.054s] Installing camera_0_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.054s] Installing camera_2_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.054s] Installing camera_4_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.054s] Installing camera_6_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.054s] Installing grid_viewer script to /home/gb/camera/install/normal_camera/lib/normal_camera
+[1.054s] 
+[1.054s] Installed /home/gb/camera/build/normal_camera
+[1.054s] running symlink_data
+[1.055s] symbolically linking /home/gb/camera/build/normal_camera/resource/normal_camera -> /home/gb/camera/install/normal_camera/share/ament_index/resource_index/packages
+[1.055s] symbolically linking /home/gb/camera/build/normal_camera/package.xml -> /home/gb/camera/install/normal_camera/share/normal_camera
+[1.055s] symbolically linking /home/gb/camera/build/normal_camera/launch/grid_2x2_launch.py -> /home/gb/camera/install/normal_camera/share/normal_camera/launch
+[1.090s] Invoked command in '/home/gb/camera/build/normal_camera' returned '0': PYTHONPATH=/home/gb/camera/build/normal_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/normal_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/gb/camera/build/normal_camera/build --no-deps symlink_data --force

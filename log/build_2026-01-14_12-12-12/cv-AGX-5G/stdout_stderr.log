@@ -1,0 +1,27 @@
+running develop
+running egg_info
+creating cv_AGX_5G.egg-info
+writing cv_AGX_5G.egg-info/PKG-INFO
+writing dependency_links to cv_AGX_5G.egg-info/dependency_links.txt
+writing entry points to cv_AGX_5G.egg-info/entry_points.txt
+writing requirements to cv_AGX_5G.egg-info/requires.txt
+writing top-level names to cv_AGX_5G.egg-info/top_level.txt
+writing manifest file 'cv_AGX_5G.egg-info/SOURCES.txt'
+reading manifest file 'cv_AGX_5G.egg-info/SOURCES.txt'
+writing manifest file 'cv_AGX_5G.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/gb/camera/install/cv-AGX-5G/lib/python3.10/site-packages/cv-AGX-5G.egg-link (link to .)
+Installing combined_view script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+Installing fiveG_network_bridge script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+Installing stereo_stitch_1 script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+Installing stereo_stitch_2 script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+Installing stereo_stitch_3 script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+Installing stereo_stitch_4 script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+
+Installed /home/gb/camera/build/cv-AGX-5G
+running symlink_data
+creating /home/gb/camera/install/cv-AGX-5G/share/ament_index
+creating /home/gb/camera/install/cv-AGX-5G/share/ament_index/resource_index
+creating /home/gb/camera/install/cv-AGX-5G/share/ament_index/resource_index/packages
+symbolically linking /home/gb/camera/build/cv-AGX-5G/resource/cv-AGX-5G -> /home/gb/camera/install/cv-AGX-5G/share/ament_index/resource_index/packages
+symbolically linking /home/gb/camera/build/cv-AGX-5G/package.xml -> /home/gb/camera/install/cv-AGX-5G/share/cv-AGX-5G

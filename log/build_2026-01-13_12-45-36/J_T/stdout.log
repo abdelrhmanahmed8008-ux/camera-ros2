@@ -1,0 +1,53 @@
+running develop
+Removing /home/gb/camera/install/J_T/lib/python3.10/site-packages/J-T.egg-link (link to .)
+running egg_info
+writing ../../build/J_T/J_T.egg-info/PKG-INFO
+writing dependency_links to ../../build/J_T/J_T.egg-info/dependency_links.txt
+writing entry points to ../../build/J_T/J_T.egg-info/entry_points.txt
+writing requirements to ../../build/J_T/J_T.egg-info/requires.txt
+writing top-level names to ../../build/J_T/J_T.egg-info/top_level.txt
+reading manifest file '../../build/J_T/J_T.egg-info/SOURCES.txt'
+writing manifest file '../../build/J_T/J_T.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/gb/camera/build/J_T/build
+creating /home/gb/camera/build/J_T/build/lib
+creating /home/gb/camera/build/J_T/build/lib/J_T
+copying J_T/stereo_stitch_node_opt.py -> /home/gb/camera/build/J_T/build/lib/J_T
+copying J_T/CUDA_stereo_stitcher.py -> /home/gb/camera/build/J_T/build/lib/J_T
+copying J_T/calibrate_homography.py -> /home/gb/camera/build/J_T/build/lib/J_T
+copying J_T/stereo_stitch_node_opt2.py -> /home/gb/camera/build/J_T/build/lib/J_T
+copying J_T/stereo_stitch_node_opt3.py -> /home/gb/camera/build/J_T/build/lib/J_T
+copying J_T/stereo_stitch_node_opt4.py -> /home/gb/camera/build/J_T/build/lib/J_T
+copying J_T/combined_view_opt.py -> /home/gb/camera/build/J_T/build/lib/J_T
+copying J_T/__init__.py -> /home/gb/camera/build/J_T/build/lib/J_T
+running install
+running install_lib
+creating /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T
+copying /home/gb/camera/build/J_T/build/lib/J_T/stereo_stitch_node_opt.py -> /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T
+copying /home/gb/camera/build/J_T/build/lib/J_T/CUDA_stereo_stitcher.py -> /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T
+copying /home/gb/camera/build/J_T/build/lib/J_T/calibrate_homography.py -> /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T
+copying /home/gb/camera/build/J_T/build/lib/J_T/stereo_stitch_node_opt2.py -> /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T
+copying /home/gb/camera/build/J_T/build/lib/J_T/stereo_stitch_node_opt3.py -> /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T
+copying /home/gb/camera/build/J_T/build/lib/J_T/stereo_stitch_node_opt4.py -> /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T
+copying /home/gb/camera/build/J_T/build/lib/J_T/combined_view_opt.py -> /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T
+copying /home/gb/camera/build/J_T/build/lib/J_T/__init__.py -> /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T
+byte-compiling /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T/stereo_stitch_node_opt.py to stereo_stitch_node_opt.cpython-310.pyc
+byte-compiling /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T/CUDA_stereo_stitcher.py to CUDA_stereo_stitcher.cpython-310.pyc
+byte-compiling /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T/calibrate_homography.py to calibrate_homography.cpython-310.pyc
+byte-compiling /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T/stereo_stitch_node_opt2.py to stereo_stitch_node_opt2.cpython-310.pyc
+byte-compiling /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T/stereo_stitch_node_opt3.py to stereo_stitch_node_opt3.cpython-310.pyc
+byte-compiling /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T/stereo_stitch_node_opt4.py to stereo_stitch_node_opt4.cpython-310.pyc
+byte-compiling /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T/combined_view_opt.py to combined_view_opt.cpython-310.pyc
+byte-compiling /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T/__init__.py to __init__.cpython-310.pyc
+running install_data
+copying resource/J_T -> /home/gb/camera/install/J_T/share/ament_index/resource_index/packages
+copying package.xml -> /home/gb/camera/install/J_T/share/J_T
+copying launch/launch_optimized.py -> /home/gb/camera/install/J_T/share/J_T/launch
+running install_egg_info
+Copying ../../build/J_T/J_T.egg-info to /home/gb/camera/install/J_T/lib/python3.10/site-packages/J_T-1.0.0-py3.10.egg-info
+running install_scripts
+Installing calibrate script to /home/gb/camera/install/J_T/lib/J_T
+Installing combined_view script to /home/gb/camera/install/J_T/lib/J_T
+Installing stereo_stitch_node script to /home/gb/camera/install/J_T/lib/J_T
+writing list of installed files to '/home/gb/camera/build/J_T/install.log'

@@ -1,0 +1,5 @@
+[console_scripts]
+calibrate = J_T.calibrate_homography:main
+combined_view = J_T.combined_view_opt:main
+stereo_stitch_node = J_T.stereo_stitch_node_opt:main
+

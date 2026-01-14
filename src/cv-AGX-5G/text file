@@ -1,0 +1,539 @@
+# Jetson Thor AGX + 5G Deployment Guide
+
+## System Requirements
+
+### Hardware
+- **Jetson Thor AGX** (or Jetson Orin AGX/Xavier AGX)
+- **4x Stereo USB Cameras** (1280x720 minimum)
+- **5G Module** (e.g., Quectel RM500Q-GL, Sierra Wireless EM9191)
+- **Sufficient cooling** (active fan recommended)
+- **Power supply**: 65W minimum
+- **Storage**: 128GB+ NVMe SSD recommended
+
+### Software
+- **JetPack 6.0+** (Ubuntu 22.04 based)
+- **ROS2 Humble** or later
+- **CUDA 12.0+**
+- **OpenCV with CUDA support**
+- **Python 3.10+**
+
+---
+
+## Installation Steps
+
+### 1. Flash Jetson with JetPack
+
+```bash
+# On host machine with NVIDIA SDK Manager
+# Flash Jetson Thor AGX with JetPack 6.0+
+
+# Or use command line tools
+sudo ./flash.sh jetson-thor-agx mmcblk0p1
+```
+
+### 2. Install ROS2 Humble
+
+```bash
+# Add ROS2 repository
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository universe
+sudo apt update && sudo apt install curl -y
+
+curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+# Install ROS2
+sudo apt update
+sudo apt install ros-humble-desktop
+sudo apt install ros-humble-cv-bridge
+sudo apt install ros-humble-image-transport
+sudo apt install ros-humble-compressed-image-transport
+
+# Source ROS2
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+### 3. Install OpenCV with CUDA Support
+
+```bash
+# Install dependencies
+sudo apt-get install -y build-essential cmake git pkg-config
+sudo apt-get install -y libgtk-3-dev libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get install -y libv4l-dev libxvidcore-dev libx264-dev
+sudo apt-get install -y libjpeg-dev libpng-dev libtiff-dev
+sudo apt-get install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+
+# Clone OpenCV
+cd ~/
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
+cd opencv
+git checkout 4.8.0
+cd ../opencv_contrib
+git checkout 4.8.0
+
+# Build with CUDA
+cd ~/opencv
+mkdir build && cd build
+
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+      -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D WITH_CUDA=ON \
+      -D CUDA_ARCH_BIN="8.7" \
+      -D CUDA_ARCH_PTX="" \
+      -D ENABLE_FAST_MATH=ON \
+      -D CUDA_FAST_MATH=ON \
+      -D WITH_CUBLAS=ON \
+      -D WITH_LIBV4L=ON \
+      -D WITH_GSTREAMER=ON \
+      -D WITH_GSTREAMER_0_10=OFF \
+      -D OPENCV_DNN_CUDA=ON \
+      -D OPENCV_ENABLE_NONFREE=ON \
+      -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+      -D BUILD_EXAMPLES=OFF \
+      -D PYTHON3_EXECUTABLE=/usr/bin/python3 \
+      ..
+
+make -j$(nproc)
+sudo make install
+sudo ldconfig
+```
+
+### 4. Install Python Dependencies
+
+```bash
+# Create virtual environment (optional but recommended)
+python3 -m venv ~/ros2_ws/venv
+source ~/ros2_ws/venv/bin/activate
+
+# Install packages
+pip install --upgrade pip
+pip install numpy
+pip install opencv-contrib-python  # If not using system OpenCV
+pip install jetson-stats  # For monitoring
+pip install pyserial  # For 5G modem communication
+
+# Optional for WebRTC
+pip install aiortc aiohttp
+```
+
+### 5. Setup 5G Module
+
+```bash
+# Install ModemManager for 5G modem
+sudo apt-get install modemmanager network-manager
+
+# Check if modem is detected
+mmcli -L
+
+# Configure 5G connection (example for Quectel RM500Q)
+sudo nmcli connection add type gsm ifname '*' con-name '5G-Connection' \
+    apn 'your-apn-here' \
+    connection.autoconnect yes
+
+# Connect
+sudo nmcli connection up '5G-Connection'
+
+# Verify connection
+ip addr show wwan0
+ping -c 4 8.8.8.8
+```
+
+### 6. Setup ROS2 Workspace
+
+```bash
+# Create workspace
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+
+# Create camera package
+ros2 pkg create --build-type ament_python camera \
+    --dependencies rclpy sensor_msgs cv_bridge std_msgs
+
+# Copy your files
+cp /path/to/jetson_stereo_stitch.py ~/ros2_ws/src/camera/camera/
+cp /path/to/fiveG_network_bridge.py ~/ros2_ws/src/camera/camera/
+cp /path/to/combined_view.py ~/ros2_ws/src/camera/camera/
+cp /path/to/jetson_stereo_5g.launch.py ~/ros2_ws/src/camera/launch/
+
+# Update setup.py
+cd ~/ros2_ws/src/camera
+```
+
+Edit `setup.py`:
+
+```python
+from setuptools import setup
+import os
+from glob import glob
+
+package_name = 'camera'
+
+setup(
+    name=package_name,
+    version='1.0.0',
+    packages=[package_name],
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='your_name',
+    maintainer_email='your_email@example.com',
+    description='Jetson stereo camera stitching with 5G',
+    license='Apache-2.0',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            'jetson_stereo_stitch = camera.jetson_stereo_stitch:main',
+            'combined_view = camera.combined_view:main',
+            'fiveG_network_bridge = camera.fiveG_network_bridge:main',
+        ],
+    },
+)
+```
+
+### 7. Build and Source
+
+```bash
+cd ~/ros2_ws
+colcon build --symlink-install
+source install/setup.bash
+
+# Add to bashrc for persistence
+echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
+```
+
+---
+
+## Configuration
+
+### Camera Setup
+
+Check camera devices:
+
+```bash
+ls -l /dev/video*
+v4l2-ctl --list-devices
+```
+
+Map camera indices (0, 2, 4, 6) to your physical cameras.
+
+### Network Configuration
+
+Edit launch parameters or create a config file:
+
+```bash
+# ~/ros2_ws/src/camera/config/network_config.yaml
+fiveG_network_bridge:
+  ros__parameters:
+    remote_host: "0.0.0.0"
+    stream_port: 5000
+    control_port: 5001
+    adaptive_quality: true
+    jpeg_quality: 85
+```
+
+### Performance Tuning
+
+```bash
+# Set Jetson to maximum performance mode
+sudo nvpmodel -m 0  # MAXN mode
+sudo jetson_clocks   # Max out clocks
+
+# Check status
+sudo nvpmodel -q
+```
+
+---
+
+## Running the System
+
+### Launch All Components
+
+```bash
+# Basic launch
+ros2 launch camera jetson_stereo_5g.launch.py
+
+# With custom parameters
+ros2 launch camera jetson_stereo_5g.launch.py \
+    n_features:=5000 \
+    jpeg_quality:=90 \
+    remote_host:=192.168.1.100 \
+    stream_port:=5000
+
+# Without local display (headless)
+ros2 launch camera jetson_stereo_5g.launch.py \
+    enable_display:=false \
+    enable_5g:=true
+
+# With monitoring
+ros2 launch camera jetson_stereo_5g.launch.py \
+    enable_monitoring:=true
+```
+
+### Individual Nodes (for debugging)
+
+```bash
+# Single camera
+ros2 run camera jetson_stereo_stitch --ros-args -p camera_index:=0
+
+# Combined view
+ros2 run camera combined_view
+
+# 5G bridge
+ros2 run camera fiveG_network_bridge
+```
+
+---
+
+## Remote Client Setup
+
+### Python Client Example
+
+```python
+#!/usr/bin/env python3
+import socket
+import json
+import cv2
+import numpy as np
+import struct
+
+def receive_stream(host, port):
+    """Receive video stream from Jetson over 5G"""
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((host, port))
+    print(f"Connected to {host}:{port}")
+    
+    try:
+        while True:
+            # Receive length header
+            length_data = client.recv(4)
+            if not length_data:
+                break
+            length = int.from_bytes(length_data, byteorder='big')
+            
+            # Receive data
+            data = b''
+            while len(data) < length:
+                packet = client.recv(min(length - len(data), 8192))
+                if not packet:
+                    break
+                data += packet
+            
+            # Parse JSON
+            frame_data = json.loads(data.decode('utf-8'))
+            
+            # Display cameras
+            for cam_id, cam_data in frame_data['cameras'].items():
+                # Decode JPEG
+                img_bytes = bytes.fromhex(cam_data['data'])
+                nparr = np.frombuffer(img_bytes, np.uint8)
+                img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+                
+                if img is not None:
+                    cv2.imshow(f'Camera {cam_id}', img)
+            
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+                
+    finally:
+        client.close()
+        cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    # Replace with your Jetson's 5G IP
+    receive_stream('192.168.1.100', 5000)
+```
+
+### Send Control Commands
+
+```python
+import socket
+import json
+
+def send_command(host, port, command):
+    """Send control command to Jetson"""
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((host, port))
+    
+    cmd_json = json.dumps(command)
+    client.sendall(cmd_json.encode('utf-8'))
+    
+    response = client.recv(1024)
+    print(f"Response: {response.decode('utf-8')}")
+    
+    client.close()
+
+# Examples
+send_command('192.168.1.100', 5001, {'type': 'set_quality', 'quality': 'high'})
+send_command('192.168.1.100', 5001, {'type': 'request_snapshot', 'camera_id': 0})
+```
+
+---
+
+## Monitoring and Optimization
+
+### Monitor System Performance
+
+```bash
+# Real-time Jetson monitoring
+jtop
+
+# ROS2 topics
+ros2 topic list
+ros2 topic hz /stereo_cameras/camera_0/panorama/compressed
+ros2 topic bw /stereo_cameras/camera_0/panorama/compressed
+
+# Network status
+ros2 topic echo /fiveG/network_status
+```
+
+### Performance Optimization Tips
+
+1. **Reduce Feature Count**: Lower `n_features` (1500-3000) for faster processing
+2. **Adjust JPEG Quality**: Lower quality (60-80) for better bandwidth
+3. **Use Compressed Topics**: Always use compressed images over 5G
+4. **Enable CUDA**: Ensure OpenCV CUDA is working
+5. **Thermal Management**: Monitor temperatures with `jtop`
+
+### Troubleshooting
+
+```bash
+# Check CUDA availability
+python3 -c "import cv2; print('CUDA:', cv2.cuda.getCudaEnabledDeviceCount())"
+
+# Check cameras
+v4l2-ctl --device=/dev/video0 --all
+
+# Check 5G connection
+mmcli -m 0
+ip addr show wwan0
+
+# ROS2 logs
+ros2 run camera jetson_stereo_stitch 2>&1 | tee camera.log
+```
+
+---
+
+## Systemd Service (Auto-start on Boot)
+
+Create `/etc/systemd/system/ros2-camera-5g.service`:
+
+```ini
+[Unit]
+Description=ROS2 Camera 5G System
+After=network.target
+
+[Service]
+Type=simple
+User=jetson
+WorkingDirectory=/home/jetson
+Environment="ROS_DOMAIN_ID=0"
+ExecStart=/bin/bash -c "source /opt/ros/humble/setup.bash && source /home/jetson/ros2_ws/install/setup.bash && ros2 launch camera jetson_stereo_5g.launch.py"
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable service:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable ros2-camera-5g.service
+sudo systemctl start ros2-camera-5g.service
+sudo systemctl status ros2-camera-5g.service
+```
+
+---
+
+## Network Architecture
+
+```
+┌─────────────────────────────────────────────┐
+│         Jetson Thor AGX                     │
+│  ┌────────────┐  ┌────────────┐            │
+│  │  Camera 0  │  │  Camera 2  │            │
+│  │  (Stereo)  │  │  (Stereo)  │            │
+│  └─────┬──────┘  └─────┬──────┘            │
+│        │                │                    │
+│  ┌─────▼──────┐  ┌─────▼──────┐            │
+│  │  Stitcher  │  │  Stitcher  │            │
+│  │   Node     │  │   Node     │            │
+│  └─────┬──────┘  └─────┬──────┘            │
+│        │                │                    │
+│  ┌─────▼────────────────▼──────┐           │
+│  │   Combined View Node         │           │
+│  │   (Local Display)            │           │
+│  └──────────────────────────────┘           │
+│                                              │
+│  ┌──────────────────────────────┐           │
+│  │   5G Network Bridge          │           │
+│  │   - Adaptive Quality         │           │
+│  │   - Compression              │           │
+│  │   - Network Monitoring       │           │
+│  └────────┬─────────────────────┘           │
+└───────────┼─────────────────────────────────┘
+            │
+            │ 5G Connection
+            │
+┌───────────▼─────────────────────────────────┐
+│         5G Network                          │
+│         (Low Latency)                       │
+└───────────┬─────────────────────────────────┘
+            │
+┌───────────▼─────────────────────────────────┐
+│      Remote Client                          │
+│      - Video Receiver                       │
+│      - Control Interface                    │
+│      - Monitoring Dashboard                 │
+└─────────────────────────────────────────────┘
+```
+
+---
+
+## Security Considerations
+
+1. **Authentication**: Add authentication to control port
+2. **Encryption**: Use SSL/TLS for data transmission
+3. **Firewall**: Configure firewall rules
+4. **VPN**: Consider VPN for additional security
+
+Example firewall setup:
+
+```bash
+sudo ufw allow 5000/tcp  # Stream port
+sudo ufw allow 5001/tcp  # Control port
+sudo ufw enable
+```
+
+---
+
+## Expected Performance
+
+- **Latency**: 50-150ms over 5G (depends on network conditions)
+- **Bandwidth**: 10-50 Mbps per camera stream
+- **Frame Rate**: 20-30 FPS sustained
+- **CPU Usage**: 40-60% with CUDA acceleration
+- **GPU Usage**: 60-80% during stitching
+
+---
+
+## Next Steps
+
+1. Test individual cameras first
+2. Verify 5G connection quality
+3. Run system with monitoring enabled
+4. Optimize parameters based on network conditions
+5. Deploy remote client
+6. Test failover scenarios
+
+For questions or issues, check ROS2 logs and system monitoring tools.

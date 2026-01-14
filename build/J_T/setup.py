@@ -1,0 +1,1 @@
+/home/gb/camera/src/J_T/setup.py

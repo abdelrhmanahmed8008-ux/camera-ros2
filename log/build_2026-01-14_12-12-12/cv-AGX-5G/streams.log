@@ -1,0 +1,29 @@
+[0.961s] Invoking command in '/home/gb/camera/build/cv-AGX-5G': PYTHONPATH=/home/gb/camera/build/cv-AGX-5G/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/cv-AGX-5G/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/gb/camera/build/cv-AGX-5G/build --no-deps symlink_data
+[1.134s] running develop
+[1.258s] running egg_info
+[1.258s] creating cv_AGX_5G.egg-info
+[1.258s] writing cv_AGX_5G.egg-info/PKG-INFO
+[1.259s] writing dependency_links to cv_AGX_5G.egg-info/dependency_links.txt
+[1.259s] writing entry points to cv_AGX_5G.egg-info/entry_points.txt
+[1.259s] writing requirements to cv_AGX_5G.egg-info/requires.txt
+[1.259s] writing top-level names to cv_AGX_5G.egg-info/top_level.txt
+[1.259s] writing manifest file 'cv_AGX_5G.egg-info/SOURCES.txt'
+[1.260s] reading manifest file 'cv_AGX_5G.egg-info/SOURCES.txt'
+[1.260s] writing manifest file 'cv_AGX_5G.egg-info/SOURCES.txt'
+[1.262s] running build_ext
+[1.262s] Creating /home/gb/camera/install/cv-AGX-5G/lib/python3.10/site-packages/cv-AGX-5G.egg-link (link to .)
+[1.262s] Installing combined_view script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+[1.262s] Installing fiveG_network_bridge script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+[1.262s] Installing stereo_stitch_1 script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+[1.262s] Installing stereo_stitch_2 script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+[1.262s] Installing stereo_stitch_3 script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+[1.262s] Installing stereo_stitch_4 script to /home/gb/camera/install/cv-AGX-5G/lib/cv-AGX-5G
+[1.262s] 
+[1.263s] Installed /home/gb/camera/build/cv-AGX-5G
+[1.263s] running symlink_data
+[1.263s] creating /home/gb/camera/install/cv-AGX-5G/share/ament_index
+[1.263s] creating /home/gb/camera/install/cv-AGX-5G/share/ament_index/resource_index
+[1.263s] creating /home/gb/camera/install/cv-AGX-5G/share/ament_index/resource_index/packages
+[1.263s] symbolically linking /home/gb/camera/build/cv-AGX-5G/resource/cv-AGX-5G -> /home/gb/camera/install/cv-AGX-5G/share/ament_index/resource_index/packages
+[1.263s] symbolically linking /home/gb/camera/build/cv-AGX-5G/package.xml -> /home/gb/camera/install/cv-AGX-5G/share/cv-AGX-5G
+[1.310s] Invoked command in '/home/gb/camera/build/cv-AGX-5G' returned '0': PYTHONPATH=/home/gb/camera/build/cv-AGX-5G/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/cv-AGX-5G/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/gb/camera/build/cv-AGX-5G/build --no-deps symlink_data

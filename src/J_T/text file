@@ -1,0 +1,6 @@
+calibrate each camera before starting 
+
+ros2 run J_T calibrate 0 ~/camera/config/homography_camera_0.npy
+ros2 run J_T calibrate 2 ~/camera/config/homography_camera_2.npy
+ros2 run J_T calibrate 4 ~/camera/config/homography_camera_4.npy
+ros2 run J_T calibrate 6 ~/camera/config/homography_camera_4.npy

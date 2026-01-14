@@ -1,0 +1,8 @@
+[console_scripts]
+combined_view = camera.combined_view:main
+fiveG_network_bridge = camera.fiveG_network_bridge:main
+stereo_stitch_1 = camera.jetson_stereo_stitch:main
+stereo_stitch_2 = camera.stereo_stitch_jetson2:main
+stereo_stitch_3 = camera.stereo_stitch_jetson3:main
+stereo_stitch_4 = camera.stereo_stitch_jetson4:main
+

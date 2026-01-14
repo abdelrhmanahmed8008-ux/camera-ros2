@@ -1,0 +1,7 @@
+[console_scripts]
+camera_0_publisher = normal_camera.camera_0_publisher:main
+camera_2_publisher = normal_camera.camera_2_publisher:main
+camera_4_publisher = normal_camera.camera_4_publisher:main
+camera_6_publisher = normal_camera.camera_6_publisher:main
+grid_viewer = normal_camera.grid_viewer:main
+

@@ -1,0 +1,1 @@
+/home/gb/camera/src/normal_camera/setup.py

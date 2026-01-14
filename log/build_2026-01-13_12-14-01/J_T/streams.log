@@ -1,0 +1,19 @@
+[0.758s] Invoking command in '/home/gb/camera/build/J_T': PYTHONPATH=/home/gb/camera/build/J_T/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/J_T/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/gb/camera/build/J_T/build --no-deps symlink_data
+[0.927s] running develop
+[1.047s] running egg_info
+[1.047s] writing J_T.egg-info/PKG-INFO
+[1.047s] writing dependency_links to J_T.egg-info/dependency_links.txt
+[1.047s] writing entry points to J_T.egg-info/entry_points.txt
+[1.047s] writing requirements to J_T.egg-info/requires.txt
+[1.047s] writing top-level names to J_T.egg-info/top_level.txt
+[1.048s] reading manifest file 'J_T.egg-info/SOURCES.txt'
+[1.049s] writing manifest file 'J_T.egg-info/SOURCES.txt'
+[1.050s] running build_ext
+[1.050s] Creating /home/gb/camera/install/J_T/lib/python3.10/site-packages/J-T.egg-link (link to .)
+[1.050s] Installing calibrate script to /home/gb/camera/install/J_T/lib/J_T
+[1.050s] Installing combined_view script to /home/gb/camera/install/J_T/lib/J_T
+[1.050s] Installing stereo_stitch_node script to /home/gb/camera/install/J_T/lib/J_T
+[1.050s] 
+[1.050s] Installed /home/gb/camera/build/J_T
+[1.050s] running symlink_data
+[1.073s] Invoked command in '/home/gb/camera/build/J_T' returned '0': PYTHONPATH=/home/gb/camera/build/J_T/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gb/camera/install/J_T/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/gb/camera/build/J_T/build --no-deps symlink_data

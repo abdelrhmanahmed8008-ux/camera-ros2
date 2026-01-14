@@ -1,0 +1,49 @@
+running develop
+Removing /home/gb/camera/install/camera/lib/python3.10/site-packages/camera.egg-link (link to .)
+running egg_info
+writing ../../build/camera/camera.egg-info/PKG-INFO
+writing dependency_links to ../../build/camera/camera.egg-info/dependency_links.txt
+writing entry points to ../../build/camera/camera.egg-info/entry_points.txt
+writing requirements to ../../build/camera/camera.egg-info/requires.txt
+writing top-level names to ../../build/camera/camera.egg-info/top_level.txt
+reading manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/gb/camera/build/camera/build
+creating /home/gb/camera/build/camera/build/lib
+creating /home/gb/camera/build/camera/build/lib/camera
+copying camera/stereo_stitch_6.py -> /home/gb/camera/build/camera/build/lib/camera
+copying camera/stereo_stitch_2.py -> /home/gb/camera/build/camera/build/lib/camera
+copying camera/stereo_stitch_0.py -> /home/gb/camera/build/camera/build/lib/camera
+copying camera/stereo_stitch_4.py -> /home/gb/camera/build/camera/build/lib/camera
+copying camera/__init__.py -> /home/gb/camera/build/camera/build/lib/camera
+copying camera/combined_view_node.py -> /home/gb/camera/build/camera/build/lib/camera
+running install
+running install_lib
+creating /home/gb/camera/install/camera/lib/python3.10/site-packages/camera
+copying /home/gb/camera/build/camera/build/lib/camera/stereo_stitch_6.py -> /home/gb/camera/install/camera/lib/python3.10/site-packages/camera
+copying /home/gb/camera/build/camera/build/lib/camera/stereo_stitch_2.py -> /home/gb/camera/install/camera/lib/python3.10/site-packages/camera
+copying /home/gb/camera/build/camera/build/lib/camera/stereo_stitch_0.py -> /home/gb/camera/install/camera/lib/python3.10/site-packages/camera
+copying /home/gb/camera/build/camera/build/lib/camera/stereo_stitch_4.py -> /home/gb/camera/install/camera/lib/python3.10/site-packages/camera
+copying /home/gb/camera/build/camera/build/lib/camera/__init__.py -> /home/gb/camera/install/camera/lib/python3.10/site-packages/camera
+copying /home/gb/camera/build/camera/build/lib/camera/combined_view_node.py -> /home/gb/camera/install/camera/lib/python3.10/site-packages/camera
+byte-compiling /home/gb/camera/install/camera/lib/python3.10/site-packages/camera/stereo_stitch_6.py to stereo_stitch_6.cpython-310.pyc
+byte-compiling /home/gb/camera/install/camera/lib/python3.10/site-packages/camera/stereo_stitch_2.py to stereo_stitch_2.cpython-310.pyc
+byte-compiling /home/gb/camera/install/camera/lib/python3.10/site-packages/camera/stereo_stitch_0.py to stereo_stitch_0.cpython-310.pyc
+byte-compiling /home/gb/camera/install/camera/lib/python3.10/site-packages/camera/stereo_stitch_4.py to stereo_stitch_4.cpython-310.pyc
+byte-compiling /home/gb/camera/install/camera/lib/python3.10/site-packages/camera/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/gb/camera/install/camera/lib/python3.10/site-packages/camera/combined_view_node.py to combined_view_node.cpython-310.pyc
+running install_data
+copying resource/camera -> /home/gb/camera/install/camera/share/ament_index/resource_index/packages
+copying package.xml -> /home/gb/camera/install/camera/share/camera
+copying launch/stereo_cameras_launch.py -> /home/gb/camera/install/camera/share/camera/launch
+running install_egg_info
+Copying ../../build/camera/camera.egg-info to /home/gb/camera/install/camera/lib/python3.10/site-packages/camera-0.0.1-py3.10.egg-info
+running install_scripts
+Installing combined_view script to /home/gb/camera/install/camera/lib/camera
+Installing stereo_stitch_0 script to /home/gb/camera/install/camera/lib/camera
+Installing stereo_stitch_2 script to /home/gb/camera/install/camera/lib/camera
+Installing stereo_stitch_4 script to /home/gb/camera/install/camera/lib/camera
+Installing stereo_stitch_6 script to /home/gb/camera/install/camera/lib/camera
+writing list of installed files to '/home/gb/camera/build/camera/install.log'

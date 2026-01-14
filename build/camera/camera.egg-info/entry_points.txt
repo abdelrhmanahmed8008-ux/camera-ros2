@@ -1,0 +1,7 @@
+[console_scripts]
+combined_view = camera.combined_view_node:main
+stereo_stitch_0 = camera.stereo_stitch_0:main
+stereo_stitch_2 = camera.stereo_stitch_2:main
+stereo_stitch_4 = camera.stereo_stitch_4:main
+stereo_stitch_6 = camera.stereo_stitch_6:main
+

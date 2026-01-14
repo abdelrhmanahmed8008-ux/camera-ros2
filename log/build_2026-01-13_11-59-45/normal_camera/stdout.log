@@ -1,0 +1,28 @@
+running develop
+running egg_info
+creating normal_camera.egg-info
+writing normal_camera.egg-info/PKG-INFO
+writing dependency_links to normal_camera.egg-info/dependency_links.txt
+writing entry points to normal_camera.egg-info/entry_points.txt
+writing requirements to normal_camera.egg-info/requires.txt
+writing top-level names to normal_camera.egg-info/top_level.txt
+writing manifest file 'normal_camera.egg-info/SOURCES.txt'
+reading manifest file 'normal_camera.egg-info/SOURCES.txt'
+writing manifest file 'normal_camera.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/gb/camera/install/normal_camera/lib/python3.10/site-packages/normal-camera.egg-link (link to .)
+Installing camera_0_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+Installing camera_2_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+Installing camera_4_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+Installing camera_6_publisher script to /home/gb/camera/install/normal_camera/lib/normal_camera
+Installing grid_viewer script to /home/gb/camera/install/normal_camera/lib/normal_camera
+
+Installed /home/gb/camera/build/normal_camera
+running symlink_data
+creating /home/gb/camera/install/normal_camera/share/ament_index
+creating /home/gb/camera/install/normal_camera/share/ament_index/resource_index
+creating /home/gb/camera/install/normal_camera/share/ament_index/resource_index/packages
+symbolically linking /home/gb/camera/build/normal_camera/resource/normal_camera -> /home/gb/camera/install/normal_camera/share/ament_index/resource_index/packages
+symbolically linking /home/gb/camera/build/normal_camera/package.xml -> /home/gb/camera/install/normal_camera/share/normal_camera
+creating /home/gb/camera/install/normal_camera/share/normal_camera/launch
+symbolically linking /home/gb/camera/build/normal_camera/launch/grid_2x2_launch.py -> /home/gb/camera/install/normal_camera/share/normal_camera/launch

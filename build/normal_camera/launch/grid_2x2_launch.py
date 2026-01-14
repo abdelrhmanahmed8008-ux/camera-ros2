@@ -1,0 +1,1 @@
+/home/gb/camera/src/normal_camera/launch/grid_2x2_launch.py
